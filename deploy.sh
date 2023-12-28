@@ -1,8 +1,6 @@
-set -x
-
-docker build -t kilimanjaroo/multi-client:latest -t kilimanjaroo/multi-client:$SHA ./client/Dockerfile ./client
-docker build -t kilimanjaroo/multi-server:latest -t kilimanjaroo/multi-server:$SHA ./server/Dockerfile ./server
-docker build -t kilimanjaroo/multi-worker:latest -t kilimanjaroo/multi-worker:$SHA ./worker/Dockerfile ./worker
+docker build -t kilimanjaroo/multi-client:latest -t kilimanjaroo/multi-client:$SHA -f ./client/Dockerfile ./client
+docker build -t kilimanjaroo/multi-server:latest -t kilimanjaroo/multi-server:$SHA -f ./server/Dockerfile ./server
+docker build -t kilimanjaroo/multi-worker:latest -t kilimanjaroo/multi-worker:$SHA -f ./worker/Dockerfile ./worker
 
 docker push kilimanjaroo/multi-client:latest
 docker push kilimanjaroo/multi-server:latest
