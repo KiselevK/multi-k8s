@@ -22,7 +22,7 @@ before_install:
   - docker build -t kilimanjaroo/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true USERNAME/react-test npm test
+  - docker run -e CI=true kilimanjaroo/react-test npm test
 
 deploy:
   provider: script
